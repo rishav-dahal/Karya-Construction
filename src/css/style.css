@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Amarante&display=swap');
+
+:root {
+   /* --main_color: #1A2238 ;
+    
+    --writing: #F4DB7D;*/
+    --color:#9DAAF2;
+    --hover:#FF6A3D;
+    --main_color:#011D41;
+    --writing:#C40D3B;
+
+  }
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.page{
+    /* background-color: red; */
+    height: 1000px;
+}
+
+
+
+/* ..............................LOGINS COINTAINER ................................... */
+.container-logo
+{
+    display: flex;
+    justify-content: space-between;
+    padding:0 100px;
+    align-items: center;
+    height: 100px;
+    background-color:var(--main_color);
+}
+
+.header-logo
+{
+    font-family:"copse";
+    font-size: 50px;
+    text-decoration: none;
+    color: white;
+    
+}
+
+.header-logo-span
+{
+    
+    text-decoration: underline;
+    color: var(--writing);
+    
+}
+.container-login ul 
+{
+    display: flex;
+    list-style-type: none;
+}
+
+.container-login ul li 
+{
+    text-decoration: none;
+    font-size: 18px;
+    padding-left: 22px;
+    
+}
+
+.container-login-btn{
+    display: block;
+    font-size: 18px;
+    color:white;
+    line-height: 45px;
+    text-decoration: none;
+    -webkit-transition: color .3s;
+    transition: color .3s;
+    background-color:  var(--hover);
+    padding: 0px 10px;
+    border-radius: 10px;
+
+}
+
+/* .login__item {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 35px;
+} */
+/*................................NAVIGATION BAR ......................................*/
+
+nav{
+    width: 100%;
+    height: 50px;
+    background-color: var(--main_color);
+    padding-left: 100px;
+}
+nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+nav ul li {
+    list-style-type: none;
+    font-size: 18px;
+    padding: 15px 15px 10px;
+
+    
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+nav ul li:hover, .active{
+    border-bottom:solid 5px var(--hover);
+    border-radius: 30px; 
+}
+
+/*.......drop menue......*/
+
+.dropdown{
+    display:none;
+}
+
+nav ul li:hover .dropdown {
+    display:block;
+    position: absolute;
+    margin-left: -15px;
+    margin-top: 15px;
+    background-color: var(--main_color);
+    padding-bottom: 0px;
+    
+
+}
+
+nav ul li:hover .dropdown ul {
+    display: block;
+    align-content: center;
+}
+
+
+
+
+/*................................................for parallex ............................................*/
+
+
+.container-div
+{
+ display: flex;
+justify-content: center;
+ align-items: center;
+ width: 100%;
+ height: 100vh;
+}
+
+.container-carausol
+{
+    background-image: url(../images/construction\ cover.jpg);
+    background-size: cover;
+}
+
+
+.container-our-work
+{
+    background-color: aqua;
+}
+
+
+.container-our-service
+{
+    height: 400px;
+    background-image: url(../images/construction\ static.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+.container-portfolio
+{
+    background-color: azure;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.................................COVER...................................................*/
+
+.cover
+{
+    height: 200px;
+    background: linear-gradient(180deg,var(--main_color),var(--color));
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+.cover h1{
+    text-align: center;
+    padding: 82px 0px;
+    color: white;
+}
+
+/*..................................LOGIN PAGE. / REGISTER PAGE.........................................*/
+
+.form-card
+{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.container-login-register
+{
+    padding: 50px 30px 20px;
+    box-shadow: 5px 5px 20px 7px#1A2238;
+    width: 400px;
+    border-radius: 25px;
+    margin: 15px;
+    background-color: #011d4110;
+}
+
+.form h3 
+{
+    text-align: center;
+    margin: 15px 0px;
+    
+}
+
+.form-content
+{
+    margin: 15px 0px;
+
+}
+
+.form-content label
+{
+    font-size: 15px;
+    width: 100%;
+
+}
+
+.form-content .btn 
+{
+    width: 49%;
+    padding: 10px;
+    color:white;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    height: 50px;
+    font-size: 15px;
+}
+
+.reset{
+    background-color: #E40C2B;
+}
+
+.signin,.signup
+{
+    background-color: var(--main_color);
+}
+
+.form-content input[type="text"],
+.form-content input[type="password"],
+.form-content input[type="email"]
+{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--main_color);
+    font-size: 15px;
+    outline: none;
+}
+.form-content input[type="radio"]
+{
+   margin: 20px;
+   width: fit-content;
+}
+.form-content input[type="checkbox"]
+{
+    margin-right: 5px;
+}
+
+.form-content a
+{
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    text-align: right;
+}
+
+.form-message
+{
+    font-weight:600; 
+    font-size:medium; 
+    color:black;
+}
+
+
+/*.........................................................................cards....................................................*/
+
+
+
+/*.......................................FOOTER...........................*/
+
+footer{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main_color);
+    text-align: center;
+    align-items: center;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.footer-head{
+  flex: 1;
+}
+
+.footer-head p{
+    color: white;
+    font-weight: bolder;
+    margin-top: 10px;
+    font-size: 30px;
+}
+.footer-social ul{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    justify-content: center;
+    list-style-type: none;
+
+}
+
+.footer-social ul li a{
+    text-decoration: none;
+    margin: 50px;
+    transition: 0.5s ease;
+
+}
+.footer-social a{
+  text-decoration: none;
+  color: white
+}
+.footer-social ul li a:hover{
+    color:var(--hover)
+
+}
+
+.footer-deep {
+  text-align: center;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg,var(--main_color),var(--color))
+}
+
+.footer-deep h2{
+    color:white;
+    font-size: 15px;
+}
