@@ -179,33 +179,6 @@ justify-content: center;
     background-color: azure;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*.................................COVER...................................................*/
 
 .cover
@@ -325,7 +298,42 @@ justify-content: center;
 
 /*.........................................................................cards....................................................*/
 
+/*...........................................................profile.......................................................*/
+.container-profile
+{
+    display: flex;
+    height:300vh;
+}
+.container-profile-nav
+{
+    background-color: aqua;
+    height: 200vh;
+}
 
+.container-profile-nav ul
+{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.container-profile-nav ul li
+{
+    padding: 10px 20px;
+    border: none;
+
+}
+.container-profile-nav ul li a
+{
+    text-decoration: none;
+    color: black;
+}
+
+.container-profile-main
+{
+    height: 100vh;
+    background-color: #E40C2B;
+}
 
 /*.......................................FOOTER...........................*/
 

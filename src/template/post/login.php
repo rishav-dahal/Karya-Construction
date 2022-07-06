@@ -46,6 +46,7 @@
                     $_SESSION['id']=$data['id'];
                     $_SESSION['uname']=$data['username'];
                     $_SESSION['email']=$data['email'];
+                    $_SESSION['name']=$data['name'];
                     header('Location:http://localhost/myproject/karya/src/template/post/profile.php');
                 }
                 else
