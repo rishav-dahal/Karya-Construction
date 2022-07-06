@@ -1,35 +1,34 @@
-// form popup
-function redirect()
+let flag = 0;
+
+slideshow(flag);
+
+function controller(n)
 {
-    window.location="http://localhost/myproject/karya/src/template/post/login.php";
-    return formPopUp();
+    flag += 1;
+
+    slideshow(flag);
 }
 
-    
-function formPopUp(){
-    const popup = document.querySelector('.container-popup');
-    popup.classList.add('active');
+function slideshow(num)
+{
+    let slides = document.getElementsByClassName('slider');
+
+    if(num == slides.length)
+    {
+        flag =0;
+        num =0;
+    }
+
+    if(num < 0)
+    {
+        flag = slides.length-1;
+        num = slides.length-1;
+    }
+
+    for(let i of slides)
+    {
+        i.style.display = "none";
+    }
+
+    slides[num].style.display = "block";
 }
-function closePopUp(){
-    const popup = document.querySelector('.container-popup');
-    popup.classList.remove('active');
-    
-
-}
-
-// function formpopup(){
-//     window.location="http://localhost/myproject/karyatesting/src/template/post/login.php";
-
-//     const popup = document.querySelector('.container-popup');
-//     const loginbtn =document.querySelector('#login-btn');
-//     const closebtn =document.querySelector('.close-btn');
-//     popup.classList.remove('active');
-    
-//     loginbtn.addEventListener('click',()=> {
-//         popup.classList.add('active');
-//     });
-    
-//     closebtn.addEventListener('click',()=>{
-//         popup.classList.remove('active');
-//     });
-// }

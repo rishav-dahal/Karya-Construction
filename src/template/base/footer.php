@@ -16,6 +16,7 @@
             </footer>
         </div>
     </body>
+    <script src="../../javascript/script.js?v=<?=$l?>"  type="text/javascript"></script>
 </html>
 
 <!-- END OF FOOTER -->
