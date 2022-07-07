@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Amarante&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 :root {
    /* --main_color: #1A2238 ;
     
@@ -154,7 +154,7 @@ justify-content: center;
 
 .container-carausol
 {
-    height: 19%;
+    height: 600px;
 }
 /* ------------ */
 .slide-container
@@ -166,13 +166,13 @@ justify-content: center;
 .slider img
 {
     width: 100%;
-    height: 550px;
+    height: 600px;
 }
 .arrow
 {
     cursor: pointer;
     position:absolute;
-    top: 100%;
+    top: 50%;
     color: black;
     background-color: rgba(255, 255, 255, 0.4);
     padding: 8px 15px;
@@ -189,12 +189,13 @@ justify-content: center;
 }
 .text
 {
+    top: 50%;
+    font-family: 'Lobster', cursive;
     color: white;
-    font-size: 20px;
     position: absolute;
-    bottom: 0px;
     width: 100%; 
     text-align: center;
+    font-size: 30px;
 }
 .slider
 {
@@ -204,8 +205,9 @@ justify-content: center;
 
 .container-our-work
 {
-    background-color: aqua;
-    height: 100%;
+    background-color: rgba(1, 29, 65, 0.8);
+    color: white;
+    height: 50%;
 }
 
 
@@ -221,6 +223,7 @@ justify-content: center;
 .container-portfolio
 {
     background-color: azure;
+    height: 50%;
 }
 
 

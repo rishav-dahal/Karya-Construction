@@ -5,6 +5,8 @@ include("../base/header.php");
 
 ?>  <div class="container-carausol container-div">
         <div class="slide-container">
+        
+
             <div class="slider">
                 <img src="../../images/sliderPic1.jpg" alt="">
                 <div class="text"><q cite="Winston Churchill">We shape our buildings- thereafter, they shape us.</q></div>
@@ -35,11 +37,10 @@ include("../base/header.php");
         </div>
     </div>
     <div class="container-our-work container-div">
-        <h1>here goes our work</h1>
+        <h1>Here goes our work.</h1>
     </div>
        
     <div class="container-our-service container-div">
-        <h1>here goes our services</h1>
         <div class="card">
             
         </div>

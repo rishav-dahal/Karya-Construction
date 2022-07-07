@@ -1,10 +1,10 @@
-let flag = 0;
+let flag = 3;
 
 slideshow(flag);
 
 function controller(n)
 {
-    flag += 1;
+    flag += n;
 
     slideshow(flag);
 }
