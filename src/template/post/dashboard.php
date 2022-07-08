@@ -36,7 +36,7 @@ if(!empty($_SESSION['email']))
                 $dash=$_GET['dash'];
                 if($dash==1)
                 {
-                    echo?>
+                    echo
                     '
                     .profile-main-header
 
