@@ -4,7 +4,7 @@ include("../base/header.php");
 
 
 ?>
-    <div class="container-carausol container-div">
+    <div class="container-carausol container-div" id="parallex">
             <h1>here goes carausol</h1>
     </div>
 
@@ -28,14 +28,6 @@ include("../base/header.php");
     <div class="container-portfolio container-div">
         <h1>here goes portfolio</h1>
     </div>
-<script>
-    const parallex=document.getElementsByClassName("container-carausol");
-    window.addEventListener("scroll",function()
-    {
-        let offset=window.pageXOffset;
-        parallex.style.background=offset*0.7+"px";
-    })
-</script>
 <?php
 
 include("../base/footer.php");
