@@ -1,6 +1,10 @@
 <?php
 session_start();
-$l=time();
+
+// echo "<pre>";
+// print_r($_SERVER);
+// echo "</pre>";
+$version=time();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +12,7 @@ $l=time();
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../../css/style.css?v=<?=$l?>" type="text/css">
+        <link rel="stylesheet" href="../../css/style.css?v=<?=$version?>" type="text/css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Document</title>
     </head>
@@ -31,7 +35,7 @@ $l=time();
                                         } 
                                         else
                                         { 
-                                            echo '<a href="../post/profile.php" class="container-login-btn">My Profile</a>';
+                                            echo '<a href="../post/dashboard.php?dash=0" class="container-login-btn">My Profile</a>';
                                         }   
                                     ?> 
                                 </li>
@@ -74,4 +78,6 @@ $l=time();
                     </ul>
                 </nav>
             </header>
+
+
             <!-- END OF HEADER -->

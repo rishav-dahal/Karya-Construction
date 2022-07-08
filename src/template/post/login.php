@@ -46,7 +46,8 @@
                     $_SESSION['id']=$data['id'];
                     $_SESSION['uname']=$data['username'];
                     $_SESSION['email']=$data['email'];
-                    header('Location:http://localhost/myproject/karya/src/template/post/profile.php');
+                    $_SESSION['name']=$data['name'];
+                    header('Location:http://localhost/myproject/karya/src/template/post/dashboard.php?dash=0');
                 }
                 else
                 {
@@ -99,7 +100,7 @@
     }
     else
     {
-        header('Location:http://localhost/myproject/karya/src/template/post/profile.php');
+        header('Location:http://localhost/myproject/karya/src/template/post/dashboard.php?dash=0');
     } 
 include('../base/footer.php');
 ?>
