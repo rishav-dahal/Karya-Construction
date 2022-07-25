@@ -10,7 +10,6 @@ $name= $email= $username= $address= $gender= $contact= $pass = "";
 // {
 //     header("Location: index.php");
 // }
-
     if ($_SERVER["REQUEST_METHOD"] == "POST") 
     {
         //name input
@@ -115,15 +114,15 @@ $name= $email= $username= $address= $gender= $contact= $pass = "";
 
         // $karya= " SELECT * FROM `user_data` WHERE email='$email'";
 
-            $karya = "INSERT INTO `user_data` ( `name`, `email`, `username`, `address`, `gender`, `contact`, `password`)
+            $sql = "INSERT INTO `user_data` ( `name`, `email`, `username`, `address`, `gender`, `contact`, `password`)
             VALUES ('$name','$email','$username','$address','$gender','$contact','$pass');";
-            if(!mysqli_query($connect, $karya))
+            if(!mysqli_query($conn, $sql))
             {
-                echo "Error creating table: " . mysqli_error($connect);
+                echo "Error creating table: " . mysqli_error($conn);
             }
             else
             {
-                header('Location:http://localhost/myproject/karya/src/template/post/index.php');
+                header('Location:'.$link.'index.php');
             }
         //insert data to database after connection
             //include('registerProcess.php');
@@ -139,7 +138,7 @@ $name= $email= $username= $address= $gender= $contact= $pass = "";
         // 				VALUES ('$username', '$email', '$password')";
         // 		$result = mysqli_query($connect, $karya);
         // 		if ($result) {
-        // 			header('Location:http://localhost/myproject/karyatesting/src/template/post/login.php');
+        // 			header('Location:'.$link.'karya/src/template/post/login.php');
         // 		} else {
         // 			echo "<script>alert('Woops! Something Wrong Went.')</script>";
         // 		}
@@ -184,8 +183,8 @@ $name= $email= $username= $address= $gender= $contact= $pass = "";
                             </div>
                             <div class="form-content">
                                 <label for="gender">GENDER:</label><span style="color: red">*</span> 
-                                <label><input type="radio" name="gender" <?php if (isset($gender) && $gender == "F") echo "checked"; ?>value="F">Female</label>
-                                <label><input type="radio" name="gender" <?php if (isset($gender) && $gender == "M") echo "checked"; ?> value="M">Male</label> 
+                                <input type="radio" name="gender" value="Female"><label>Female</label>
+                                <input type="radio" name="gender" value="Male"><label>Male</label> 
                                 <?php echo '<span style="color:red">&nbsp;'.$genderErr.'</span>'?>
                             </div>
                             <div class="form-content">

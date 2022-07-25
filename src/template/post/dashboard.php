@@ -1,91 +1,105 @@
 <?php 
-include("../base/database.php");
-include("../base/header.php");
+  include("../base/header.php");
 if(!empty($_SESSION['email']))
 {    
+  
+    include("connection.php");
+    $username=$_SESSION['uname'];
+    $sql = "SELECT * from user_data where username='$username'";
+    
+    $result = mysqli_query($conn,$sql);
+    
+    $customer = mysqli_fetch_array($result);
+    
+    $id= $customer['id'];
+    
+    $name = $customer['name'];
+    
+    $email = $customer['email'];
+    
+    $contact = $customer['contact'];
+    
+    $address = $customer['address'];
+    
+    $gender= $customer['gender'];
+    
+    $profile_img = $customer['profile_image'];
+
+    $pass= $customer['password']
 ?>
     <div class="container-profile">
         <div class="container-profile-nav">
-        <?php
-            date_default_timezone_set("Asia/Kathmandu");
-            $hour=date("H");
-            if($hour<=12)
-            {
-                echo '<h3> Good morning,</h3>';
-            }
-            else if($hour<=3)
-            {
-                echo '<h3> Good Afternoon,</h3>';
-            }
-            else 
-            {
-                echo '<h3> Good evening,</h3>';
-            }
-            $name=$_SESSION['name'];
-            echo '<span class="greeting">'.$name.'</span>';
-        ?>
+            <div class="profile-img">
+                <img src="<?php echo $link;?>karya/src/data/images/<?php echo $profile_img; ?>" alt="<?php echo $profile_img; ?>">
+            </div>
+            
+            <?php
+                date_default_timezone_set("Asia/Kathmandu");
+                $hour=date("H");
+                if($hour<=12)
+                {
+                    echo '<h3> Good morning,</h3>';
+                }
+                else if($hour<=3)
+                {
+                    echo '<h3> Good Afternoon,</h3>';
+                }
+                else 
+                {
+                    echo '<h3> Good evening,</h3>';
+                }
+                $name=$_SESSION['name'];
+                echo '<span class="greeting">'.$name.'</span>';
+            ?> 
             <ul>
-                <li><a href="dashboard.php?dash=0" >Profile</a></li>
-                <li><a href="dashboard.php?dash=1" >Account setting</a></li>
-                <li><a href="dashboard.php?dash=2">Billing</a></li>
-                <li><a href="dashboard.php?dash=3">Delivary</a></li>
+                <li><a href="dashboard.php?profile" >My Profile</a></li>
+                <li><a href="dashboard.php?address_book" >Address book</a></li>
+                <li><a href="dashboard.php?orders">Ordersg</a></li>
+                <li><a href="dashboard.php?change_password">Change password</a></li>
+                <li><a href="dashboard.php?logout">Logout</a></li>
             </ul>
         </div>
         <div class="container-profile-main">
             <?php 
-                $dash=$_GET['dash'];
-                if($dash==1)
+                if(isset($_GET["profile"]))
                 {
-                    echo
-                    '
-                    .profile-main-header
+                    include("c_profile.php");
+                }
+                if(isset($_GET["address_book"]))
+                {
+                    include("c_address_book.php");
+                }
+                if(isset($_GET["orders"]))
+                {
+                    include("c_orders.php");
+                }
+                if(isset($_GET["change_password"]))
+                {
+                    include("c_change_password.php");
+                }
+                if(isset($_GET["logout"]))
+                {
+                    include("logout.php");
+                }
+                if(isset($_GET["c_edit_acc"]))
+                {
+                    include("c_edit_acc.php");
+                }
+                if(isset($_GET["c_delete_acc"]))
+                {
+                    include("c_delete_acc.php");
+                }
 
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    ';
-                }
-                else if ($dash==2)
-                {
-                    echo
-                    '<h1>This is billing</h1>';
-                }
-                else if ($dash==3)
-                { 
-                    echo
-                    '<h1>This is delivary</h1>';
-                }
-                else
-                {
-                    echo
-                    '<h1>This is profile</h1>';
-                }
             ?>
-        </div>
-
-        <div class="container-profile-cartinfo">
-            <h1>cart info</h1>
         </div>
     </div>
 <?php  
+
+include("../base/footer.php");
 }
 else
 {
-    header('Location:http://localhost/myproject/karya/src/template/post/login.php');
+    header('Location:'.$link.'karya/src/template/post/login.php');
 }
-
-include("../base/footer.php");
 
 ?>

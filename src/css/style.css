@@ -8,6 +8,7 @@
     --hover:#FF6A3D;
     --main_color:#011D41;
     --writing:#C40D3B;
+    --transparency:#011D4180;
 
   }
 
@@ -128,6 +129,7 @@ nav ul li:hover .dropdown {
     margin-top: 15px;
     background-color: var(--main_color);
     padding-bottom: 0px;
+    z-index: 1;
     
 
 }
@@ -145,11 +147,10 @@ nav ul li:hover .dropdown ul {
 
 .container-div
 {
- display: flex;
-justify-content: center;
- align-items: center;
- width: 100%;
- height: 20%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
 }
 
 .container-carausol
@@ -162,6 +163,7 @@ justify-content: center;
     position: relative;
     width: 100%;
     height: 100%;
+    z-index: 0;
 }
 .slider img
 {
@@ -205,9 +207,11 @@ justify-content: center;
 
 .container-our-work
 {
-    background-color: rgba(1, 29, 65, 0.8);
-    color: white;
-    height: 50%;
+    /* background-color: rgba(1, 29, 65, 0.8); */
+    background-color: var(--main_color);
+    height: 60%;
+    flex-direction: column;
+    padding: 1%;
 }
 
 
@@ -223,14 +227,15 @@ justify-content: center;
 .container-portfolio
 {
     background-color: azure;
-    height: 50%;
+    height: 45%;
+    align-items: center;
 }
 
 /*.................................COVER...................................................*/
 
 .cover
 {
-    height: 200px;
+    height: 150px;
     background: linear-gradient(180deg,var(--main_color),var(--color));
     border-bottom-left-radius:10px;
     border-bottom-right-radius: 10px;
@@ -282,7 +287,7 @@ justify-content: center;
 
 }
 
-.form-content .btn 
+ .btn 
 {
     width: 49%;
     padding: 10px;
@@ -344,74 +349,102 @@ justify-content: center;
 
 
 /*.........................................................................cards....................................................*/
-
-/*...........................................................profile.......................................................*/
-.container-profile
+.parallex-wrapper
 {
     display: flex;
-    height:100%;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    margin: 30px 0px;
-}
-.container-profile h3
-{
-    padding: 20px 30px 0px;
-}
-.greeting
-{
-    padding: 30px;
-    font-weight: 600;
-}
-.container-profile-nav
-{
-    flex: 1;
-    justify-content: flex-start;
-    height: 100%;
+    background-color: var(--transparency);
 }
 
-.container-profile-nav ul
+.wrapper-text
 {
+    font-size: 40px;
+    color:white;
+    font-weight: 700;
+}
+
+.grid
+{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around
+}
+.text-card
+{
+    height: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    list-style: none;
-}
-
-.container-profile-nav ul li
-{
-    border: none;
-    padding: 30px;
-
-}
-.container-profile-nav ul li a
-{
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
-}
-
-.container-profile-main
-{
-    flex:3;
     justify-content: center;
+    background-color:rgba(217,217,217,0.15);
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.068);
+
+}
+.card{
+
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 100%;
-    background-color: #d6d6d6;
-    border-radius: 18px;
-    box-shadow: 0px 10px 20px black;
-    padding: 20px;
+    background-color: var(--transparency);
+    align-items: center;
+    text-align: center;
+    transform: scale(0.9);
+    border-radius: 20px;
+    transition: 0.5s ease;
+    border: 1px solid rgba(0, 0, 0, 0.068);
+    padding: 40px;
+}
+.card:hover{
+    box-shadow: 5px 5px 5px 5px rgba(68, 68, 68, 0.199);
+    transform: scale(0.92);
 }
 
-.container-profile-cartinfo
-{
-    padding-left: 10px;
-    flex: 1;
-    justify-content: flex-end;
-    height: 100%;
+.cicon i {
+    color:var(--hover);
 }
+.card-text{
+    font-size: 30px;
+    color:white;
+    font-weight: bolder;
+}
+
+.card2
+{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background-color:rgba(217,217,217,0.15);
+    align-items: center;
+    text-align: center;
+    transform: scale(0.9);
+    border-radius: 20px;
+    transition: 0.5s ease;
+    border: 1px solid rgba(0, 0, 0, 0.068);
+    padding: 40px;
+}
+
+.heading
+{
+    font-size: 50px;
+    color: white;
+    margin-bottom: 10px;
+
+}
+
 
 /*.......................................FOOTER...........................*/
 
 footer{
-    height: 200px;
+    height: 30%;
     width: 100%;
     display: flex;
     flex-direction: column;

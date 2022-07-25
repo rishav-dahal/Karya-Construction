@@ -1,0 +1,92 @@
+/*...........................................................profile.......................................................*/
+.container-profile
+{
+    display: flex;
+    height:100%;
+    width: 100%;
+    background-color: #d6d6d6;
+}
+.container-profile h3
+{
+    padding: 20px 30px 0px;
+}
+.greeting
+{
+    padding: 30px;
+    font-weight: 600;
+}
+.container-profile-nav
+{
+    flex: 1;
+    height: 100%;
+}
+
+.container-profile-nav ul
+{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.container-profile-nav ul li
+{
+    border: none;
+    padding: 30px;
+
+}
+.container-profile-nav ul li a
+{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.container-profile-main
+{
+    flex:3;
+    height: 100%;
+    padding: 20px;
+    margin-right: 100px;
+}
+
+.profile-img
+{
+    padding: 30px 30px 0px;
+}
+.profile-img img
+{
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+
+}
+
+.profile-main-details
+{
+    background-color: white;
+    padding:10px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+
+.profile-body
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profile-item
+{
+    width: 50%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items:left;
+}
+
+.profile-item-title
+{
+    font-size: 18px;
+    font-weight: bold;
+}

@@ -1,8 +1,9 @@
 
 <?php
-    include('../base/header.php');
+ include('../base/header.php');
     if(empty($_SESSION['email']))
     {
+       
         $err=$usernameErr=$passErr="";
         $username=$pass="";
         if(($_SERVER["REQUEST_METHOD"] == "POST") ) 
@@ -37,8 +38,8 @@
             {
                 include('connection.php');
                 $pass= md5($pass);
-                $karya="SELECT * from user_data where username='$username' && password='$pass';";
-                $result= mysqli_query($connect,$karya);
+                $sql="SELECT * from user_data where username='$username' && password='$pass';";
+                $result= mysqli_query($conn,$sql);
                 if($result->num_rows>0)
                 {
                     
@@ -47,12 +48,12 @@
                     $_SESSION['uname']=$data['username'];
                     $_SESSION['email']=$data['email'];
                     $_SESSION['name']=$data['name'];
-                    header('Location:http://localhost/myproject/karya/src/template/post/dashboard.php?dash=0');
+                    header('Location:'.$link.'karya/src/template/post/dashboard.php?profile');
                 }
                 else
                 {
                     $_SESSION['error']='Invalid Username or password';
-                    header('Location:http://localhost/myproject/karya/src/template/post/login.php');
+                    header('Location:'.$link.'karya/src/template/post/login.php');
                 }
             }
         }
@@ -97,10 +98,11 @@
                     </div>
                 </div>
 <?php
+include('../base/footer.php');
     }
     else
     {
-        header('Location:http://localhost/myproject/karya/src/template/post/dashboard.php?dash=0');
+        header('Location:'.$link.'karya/src/template/post/dashboard.php?profile');
     } 
-include('../base/footer.php');
+
 ?>
