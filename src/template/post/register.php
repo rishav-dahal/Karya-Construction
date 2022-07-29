@@ -6,10 +6,10 @@ include("../base/header.php");
 $err= $nameErr= $emailErr= $usernameErr= $addressErr= $genderErr= $contactErr= $passErr=  "";
 $name= $email= $username= $address= $gender= $contact= $pass = "";
 
-// if (isset($_SESSION['username'])) 
-// {
-//     header("Location: index.php");
-// }
+//  if (isset($_SESSION['username'])) 
+//  {
+//      header("Location: index.php");
+//  }
     if ($_SERVER["REQUEST_METHOD"] == "POST") 
     {
         //name input
@@ -111,29 +111,38 @@ $name= $email= $username= $address= $gender= $contact= $pass = "";
         {
 
             include("connection.php");
-
-        // $karya= " SELECT * FROM `user_data` WHERE email='$email'";
-
-            $sql = "INSERT INTO `user_data` ( `name`, `email`, `username`, `address`, `gender`, `contact`, `password`)
-            VALUES ('$name','$email','$username','$address','$gender','$contact','$pass');";
-            if(!mysqli_query($conn, $sql))
+            $sql = "SELECT * FROM user_data WHERE email='$email'";
+            $result = mysqli_query($conn, $sql);
+            if(!$result->num_rows > 0)
             {
-                echo "Error creating table: " . mysqli_error($conn);
+                $sql = "INSERT INTO `user_data` ( `name`, `email`, `username`, `address`, `gender`, `contact`, `password`)
+                VALUES ('$name','$email','$username','$address','$gender','$contact','$pass');";
+                if(!mysqli_query($conn, $sql))
+                {
+                    echo "Error creating table: " . mysqli_error($conn);
+                }
+                else
+                {
+                    echo "<script>window.open('$link/index.php','_self')</script>";
+                }
             }
             else
             {
-                header('Location:'.$link.'index.php');
+            	echo "<script>alert('Woops! Email Already Exists.')</script>";
             }
+
+
+
+            
         //insert data to database after connection
             //include('registerProcess.php');
         }
     
 
-        // if ($password == $cpassword)
-        // {
         // 	$karya = "SELECT * FROM users WHERE email='$email'";
         // 	$result = mysqli_query($connect, $karya);
-        // 	if (!$result->num_rows > 0) {
+        // 	if (!$result->num_rows > 0) 
+    }
         // 		$karya = "INSERT INTO users (username, email, password)
         // 				VALUES ('$username', '$email', '$password')";
         // 		$result = mysqli_query($connect, $karya);
@@ -149,7 +158,6 @@ $name= $email= $username= $address= $gender= $contact= $pass = "";
         // } else {
         // 	echo "<script>alert('Password Not Matched.')</script>";
         // }
-    }
 
     ?>
             <div class="cover">
@@ -158,27 +166,27 @@ $name= $email= $username= $address= $gender= $contact= $pass = "";
             <div class="form-card">
                 <div class="container-login-register">
                     <div class="form">
-                        <form name="register" method="POST" enctype="multipart/form-data" autocomplete="off" action="" >
+                        <form name="register" method="POST" enctype="multipart/form-data" autocomplete="off" action="" onsubmit="validateform();">
                             <h3>SIGN UP</h3>
 
                             <div class="form-content">
                                 <label for="user">NAME:</label><span style="color: red">*</span> 
-                                <input type="text" name="name" id="name" required value="<?php echo $name; ?>">
+                                <input type="text" name="name" id="name"  value="<?php echo $name; ?>">
                                 <?php echo '<span style="color:red">&nbsp;'.$nameErr.'</span>'?>
                             </div>
                             <div class="form-content">
                                 <label for="user">EMAIL:</label><span style="color: red">*</span> 
-                                <input type="email" name="email" id="email" required value="<?php echo $email; ?>">
+                                <input type="email" name="email" id="email" value="<?php echo $email; ?>">
                                 <?php echo '<span style="color:red">&nbsp;'.$emailErr.'</span>'?>
                             </div>
                             <div class="form-content">
                             <label for="user">USERNAME:</label><span style="color: red">*</span> 
-                                <input type="text" name="username" id="username" required value="<?php echo $username; ?>">
+                                <input type="text" name="username" id="username" value="<?php echo $username; ?>">
                                 <?php echo '<span style="color:red">&nbsp;'.$usernameErr.'</span>'?>
                             </div>
                             <div class="form-content">
                                 <label for="user">ADDRESS:</label><span style="color: red">*</span> 
-                                <input type="text" name="address" id="address" required value="<?php echo $address; ?>">
+                                <input type="text" name="address" id="address" value="<?php echo $address; ?>">
                                 <?php echo '<span style="color:red">&nbsp;'.$addressErr.'</span>'?>
                             </div>
                             <div class="form-content">
@@ -189,21 +197,21 @@ $name= $email= $username= $address= $gender= $contact= $pass = "";
                             </div>
                             <div class="form-content">
                                 <label for="user">CONTACT:</label><span style="color: red">*</span> 
-                                <input type="text" name="contact" id="contact" required value="<?php echo $contact; ?>">
+                                <input type="text" name="contact" id="contact"  value="<?php echo $contact; ?>">
                                 <?php echo '<span style="color:red">&nbsp;'.$contactErr.'</span>'?>
                             </div>
                             <div class="form-content">
                                 <label for="pass">PASSWORD:</label><span style="color: red">*</span> 
-                                <input type="password" name="pass" id="pass" required >
+                                <input type="password" name="pass" id="pass"  >
                                 <?php echo '<span style="color:red">&nbsp;'.$passErr.'</span>'?>
                             </div>
                             <div class="form-content">
                             <label for="cpass">CONFIRM PASSWORD:</label><span style="color: red">*</span> 
-                                <input type="password" name="cpass" id="cpass" required >
+                                <input type="password" name="cpass" id="cpass" >
                                 <?php echo '<span style="color:red">&nbsp;'.$passErr.'</span>'?>
                             </div>
                             <div class="form-content">
-                                <input type="submit" value="SIGN UP" name="signup" class="btn signup">
+                                <input type="submit" value="SIGN UP" name="signup" class="btn signup" onclick="validateform();">
                                 <input type="reset" value="RESET" name="reset" class="btn reset">
                             </div>
                             <div class="form-content">

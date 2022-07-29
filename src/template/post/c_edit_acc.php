@@ -27,7 +27,7 @@ if(isset($_POST['update']))
         $imagefiletype= strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         $imgsize= $_FILES['n_image']['size'];
         $flag=0;
-        $imgerror="";
+       $imgerror="No error";
 
         if($imgsize!==false)
         {
@@ -85,7 +85,7 @@ if(isset($_POST['update']))
 
         echo "<script>window.open('dashboard.php?profile','_self')</script>";
     }
-
+    
 }
 
 
@@ -134,50 +134,53 @@ if(isset($_POST['update']))
                                 <input type="text" name="n_address" required value="<?php echo $address; ?>">
                                 </div>
                             </div>
-                            <div class="profile-item">
+                            <!-- <div class="profile-item">
                                 <span class="profile-item-title">Customer DOB</span>
                                 <div class="profile-item-info">
                                 <select name="year" >
                                     <option value="--" selected>Year</option>                       
                                     <?php
-                                        for($i=date('Y'); $i>1899; $i--) {
-                                            $birthdayYear = '';
-                                            $selected = '';
-                                            if ($birthdayYear == $i) $selected = ' selected="selected"';
-                                            print('<option value="'.$i.'"'.$selected.'>'.$i.'</option>'."\n");
-                                        }
+                                        // for($i=date('Y'); $i>1899; $i--) {
+                                        //     $birthdayYear = '';
+                                        //     $selected = '';
+                                        //     if ($birthdayYear == $i) $selected = ' selected="selected"';
+                                        //     print('<option value="'.$i.'"'.$selected.'>'.$i.'</option>'."\n");
+                                        // }
                                     ?>                          
                                 </select>  
                                 <select name="month" >
                                     <option value="--" selected>Month</option>
                                     <?php
-                                    for($i=12; $i>00; $i--) {
-                                            $birthdaymonths = '';
-                                            $selected = '';
-                                            if ($birthdaymonths == $i) $selected = ' selected="selected"';
-                                            print('<option value="'.$i.'"'.$selected.'>'.$i.'</option>'."\n");
-                                        }
+                                    // for($i=12; $i>00; $i--) {
+                                    //         $birthdaymonths = '';
+                                    //         $selected = '';
+                                    //         if ($birthdaymonths == $i) $selected = ' selected="selected"';
+                                    //         print('<option value="'.$i.'"'.$selected.'>'.$i.'</option>'."\n");
+                                    //     }
                                         ?>
                                 </select>  
                                 <select name="day"  >
                                     <option value="--" selected>Day</option>
                                     <?php
-                                        for($i=32; $i>00; $i--) {
-                                            $birthdayday = '';
-                                            $selected = '';
-                                            if ($birthdayday == $i) $selected = ' selected="selected"';
-                                            print('<option value="'.$i.'"'.$selected.'>'.$i.'</option>'."\n");
-                                        }
+                                        // for($i=32; $i>00; $i--) {
+                                        //     $birthdayday = '';
+                                        //     $selected = '';
+                                        //     if ($birthdayday == $i) $selected = ' selected="selected"';
+                                        //     print('<option value="'.$i.'"'.$selected.'>'.$i.'</option>'."\n");
+                                        // }
                                     ?>  
                                 </select>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="profile-item">
                                 <span class="profile-item-title">Customer image</span>
                                 <div class="profile-item-info">
                                 <input type="file" name="n_image" >
                                 </div>
-                                <?php echo '<span style="color:red">&nbsp;'.$imgerror.'</span>' ?>
+                                <?php
+                                if(isset($imgerror))
+                                 echo '<span style="color:red">&nbsp;'.$imgerror.'</span>' 
+                                 ?>
                             </div>
                         </div>
                         <button name="update" class="btn signup">UPDATE NOW</button></a>

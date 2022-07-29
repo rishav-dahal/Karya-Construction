@@ -56,15 +56,15 @@ $dob= $customer['dob'];
                             </div>
                         </div>
                         <div class="profile-item">
-                            <span class="profile-item-title">Customer DOB</span>
+                            <!-- <span class="profile-item-title">Customer DOB</span>
                             <div class="profile-item-info">
                             <?php echo $dob; ?>
-                            </div>
+                            </div> -->
                         </div>
                         
                     </div>
                     <a href="dashboard.php?c_edit_acc"><button type="a" class="btn signup">EDIT ACCOUNT</button></a>
-                    <a href="dashboard.php?c_delete_acc"><button type="a" class="btn reset">DELETE ACCOUNT</button></a>
+                    <a href="dashboard.php?c_delete_account"><button type="a" class="btn reset">DELETE ACCOUNT</button></a>
                     
                 </div>
             </div>

@@ -48,12 +48,13 @@
                     $_SESSION['uname']=$data['username'];
                     $_SESSION['email']=$data['email'];
                     $_SESSION['name']=$data['name'];
-                    header('Location:'.$link.'karya/src/template/post/dashboard.php?profile');
+                    echo "<script>window.open('dashboard.php?profile','_self')</script>";
+                    
                 }
                 else
                 {
                     $_SESSION['error']='Invalid Username or password';
-                    header('Location:'.$link.'karya/src/template/post/login.php');
+                    echo "<script>window.open('login.php','_self')</script>";
                 }
             }
         }
@@ -102,7 +103,7 @@ include('../base/footer.php');
     }
     else
     {
-        header('Location:'.$link.'karya/src/template/post/dashboard.php?profile');
+        echo "<script>window.open('dashboard.php?profile','_self')</script>";
     } 
 
 ?>

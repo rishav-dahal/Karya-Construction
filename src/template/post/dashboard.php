@@ -30,17 +30,17 @@ if(!empty($_SESSION['email']))
     <div class="container-profile">
         <div class="container-profile-nav">
             <div class="profile-img">
-                <img src="<?php echo $link;?>karya/src/data/images/<?php echo $profile_img; ?>" alt="<?php echo $profile_img; ?>">
+                <img src="<?php echo $link;?>/karya/src/data/images/<?php echo $profile_img; ?>" alt="<?php echo $profile_img; ?>">
             </div>
             
             <?php
                 date_default_timezone_set("Asia/Kathmandu");
                 $hour=date("H");
-                if($hour<=12)
+                if($hour<12)
                 {
                     echo '<h3> Good morning,</h3>';
                 }
-                else if($hour<=3)
+                else if($hour<=13)
                 {
                     echo '<h3> Good Afternoon,</h3>';
                 }
@@ -53,8 +53,8 @@ if(!empty($_SESSION['email']))
             ?> 
             <ul>
                 <li><a href="dashboard.php?profile" >My Profile</a></li>
-                <li><a href="dashboard.php?address_book" >Address book</a></li>
-                <li><a href="dashboard.php?orders">Ordersg</a></li>
+                <!-- <li><a href="dashboard.php?address_book" >Address book</a></li>
+                <li><a href="dashboard.php?orders">Ordersg</a></li> -->
                 <li><a href="dashboard.php?change_password">Change password</a></li>
                 <li><a href="dashboard.php?logout">Logout</a></li>
             </ul>
@@ -85,9 +85,9 @@ if(!empty($_SESSION['email']))
                 {
                     include("c_edit_acc.php");
                 }
-                if(isset($_GET["c_delete_acc"]))
+                if(isset($_GET["c_delete_account"]))
                 {
-                    include("c_delete_acc.php");
+                    include("c_delete_account.php");
                 }
 
             ?>
@@ -99,7 +99,7 @@ include("../base/footer.php");
 }
 else
 {
-    header('Location:'.$link.'karya/src/template/post/login.php');
+    echo "<script>window.open('login.php','_self')</script>";
 }
 
 ?>
