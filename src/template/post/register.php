@@ -1,15 +1,16 @@
 <?php 
-//include("../base/database.php");
+session_start();
+if (isset($_SESSION['uname'])) 
+{
+   header("Location:dashboard.php?profile");
+}
 include("../base/header.php");
 
 //declaring variables
 $err= $nameErr= $emailErr= $usernameErr= $addressErr= $genderErr= $contactErr= $passErr=  "";
 $name= $email= $username= $address= $gender= $contact= $pass = "";
 
-//  if (isset($_SESSION['username'])) 
-//  {
-//      header("Location: index.php");
-//  }
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") 
     {
         //name input
@@ -111,7 +112,7 @@ $name= $email= $username= $address= $gender= $contact= $pass = "";
         {
 
             include("connection.php");
-            $sql = "SELECT * FROM user_data WHERE email='$email'";
+            $sql = "SELECT * FROM user_data WHERE username='$username'";
             $result = mysqli_query($conn, $sql);
             if(!$result->num_rows > 0)
             {
@@ -128,7 +129,7 @@ $name= $email= $username= $address= $gender= $contact= $pass = "";
             }
             else
             {
-            	echo "<script>alert('Woops! Email Already Exists.')</script>";
+            	echo "<script>alert('Woops! username Already Exists.')</script>";
             }
 
 

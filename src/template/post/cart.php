@@ -1,5 +1,5 @@
 <?php
-
+include("session.php");
 include("../base/header.php");
 include("connection.php");
 include("function.php");

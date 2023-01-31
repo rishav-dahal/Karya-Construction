@@ -1,8 +1,6 @@
 <?php 
-  include("../base/header.php");
-if(!empty($_SESSION['email']))
-{    
-  
+    include("session.php");
+    include("../base/header.php");
     include("connection.php");
     $username=$_SESSION['uname'];
     $sql = "SELECT * from user_data where username='$username'";
@@ -94,12 +92,5 @@ if(!empty($_SESSION['email']))
         </div>
     </div>
 <?php  
-
 include("../base/footer.php");
-}
-else
-{
-    echo "<script>window.open('login.php','_self')</script>";
-}
-
 ?>

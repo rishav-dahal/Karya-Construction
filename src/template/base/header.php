@@ -30,7 +30,6 @@ $link="http://localhost/myproject/hosting";
                             <div>
                                 <li >
                                     <?php
-                                    session_start();
                                         if(empty($_SESSION['email']))
                                         {
                                             // echo '<a href="'.$link.'/karya/src/template/post/register.php" class="container-login-btn">Register</a>';

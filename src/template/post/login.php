@@ -1,9 +1,10 @@
 
 <?php
- include('../base/header.php');
+session_start();
+
     if(empty($_SESSION['email']))
     {
-       
+        include('../base/header.php');
         $err=$usernameErr=$passErr="";
         $username=$pass="";
         if(($_SERVER["REQUEST_METHOD"] == "POST") ) 
