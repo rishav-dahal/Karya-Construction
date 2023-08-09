@@ -2,6 +2,10 @@
 // echo "<pre>";
 // print_r($_SERVER);
 // echo "</pre>";
+session_start();
+    if(isset($_SESSION['is_login'])){
+        header("Location: dashboard.php");
+    }
 $version=time();
 $link="http://localhost/myproject/hosting";
 ?>
