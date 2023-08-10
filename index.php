@@ -1,6 +1,9 @@
 <?php 
-include("karya/src/template/base/header.php");
-
+session_start();
+if(isset($_SESSION['is_login'])){
+    header("Location: dashboard.php");
+}
+include("src/template/base/header.php");
 
 ?>  <div class="container-carausol container-div">
         <div class="slide-container">
@@ -100,6 +103,6 @@ include("karya/src/template/base/header.php");
     </div>
 <?php
 
-include("karya/src/template/base/footer.php");
+include("src/template/base/footer.php");
 
 ?>

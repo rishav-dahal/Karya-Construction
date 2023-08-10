@@ -2,21 +2,16 @@
 // echo "<pre>";
 // print_r($_SERVER);
 // echo "</pre>";
-session_start();
-    if(isset($_SESSION['is_login'])){
-        header("Location: dashboard.php");
-    }
 $version=time();
-$link="http://localhost/myproject/hosting";
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="<?=$link;?>/karya/src/css/style.css?v=<?=$version?>" type="text/css">
-        <link rel="stylesheet" href="<?=$link;?>/karya/src/css/customer.css?v=<?=$version?>" type="text/css">
-        <link rel="stylesheet" href="<?=$link;?>/karya/src/css/product.css?v=<?=$version?>" type="text/css">
+        <link rel="stylesheet" href="src/css/style.css?v=<?$version?>" type="text/css">
+        <link rel="stylesheet" href="src/css/customer.css?v=<?=$version?>" type="text/css">
+        <link rel="stylesheet" href="src/css/product.css?v=<?=$version?>" type="text/css">
         <script src="https://kit.fontawesome.com/583742f5e3.js" crossorigin="anonymous"></script>
         
         <title>KARYA</title>
@@ -50,11 +45,11 @@ $link="http://localhost/myproject/hosting";
                                     <?php
                                         if(empty($_SESSION['email']))
                                         {
-                                            echo '<a href="'.$link.'/karya/src/template/post/login.php" class="container-login-btn">Sign In</a>';
+                                            echo '<a href="../post/login.php" class="container-login-btn">Sign In</a>';
                                         } 
                                         else
                                         { 
-                                            echo '<a href="'.$link.'/karya/src/template/post/logout.php" class="container-login-btn">Logout</a>';
+                                            echo '<a href="../post/logout.php" class="container-login-btn">Logout</a>';
                                         }   
                                     ?> 
                                 </li>
@@ -64,11 +59,11 @@ $link="http://localhost/myproject/hosting";
                                     <?php
                                         if(empty($_SESSION['email']))
                                         {
-                                            echo '<a href="'.$link.'/karya/src/template/post/cart.php"  class="container-login-btn"><i class="fa-solid fa-cart-arrow-down" style="margin-right:5px;"></i>Cart</a>';
+                                            echo '<a href="../post/cart.php"  class="container-login-btn"><i class="fa-solid fa-cart-arrow-down" style="margin-right:5px;"></i>Cart</a>';
                                         } 
                                         else
                                         { 
-                                            echo '<a href="'.$link.'/karya/src/template/post/cart.php" class="container-login-btn"><i class="fa-solid fa-cart-arrow-down" style="margin-right:5px;"></i>Cart</a>';
+                                            echo '<a href="../post/cart.php" class="container-login-btn"><i class="fa-solid fa-cart-arrow-down" style="margin-right:5px;"></i>Cart</a>';
                                         }   
                                     ?> 
                                 </li>
