@@ -27,7 +27,6 @@ Karya Construction is a simple web-based platform built using **PHP** and **MySQ
 
 ---
 
-## 🚀 Getting Started
 
 ### 1. Clone the Repository
 
@@ -51,14 +50,15 @@ cd karya_Construction
 php -S localhost:8000
 ```
 
-- Open your browser and go to:  
+- Open your browser and go to:
+``` bash
   `http://localhost:8000/index.php`
-
+```
 ---
 
 ##  Folder Structure
 
-```
+``` bash
 karya_Construction/
 │
 ├── connection.php        # DB connection
